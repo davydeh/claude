@@ -8,6 +8,7 @@ Personal skills loaded by Claude Code from `~/.claude/skills/` (via the symlinks
 | [`learn-from-mistakes`](./learn-from-mistakes/SKILL.md) | End-of-session retrospective. Scans the transcript for correction/frustration signals, drafts feedback candidates, and (after per-lesson confirmation) persists them to global feedback memory or project `.claude/memory/learnings.md`. | "/learn-from-mistakes", "before we wrap up", "what did I do wrong", "session postmortem" |
 | [`pandora`](./pandora/SKILL.md) | Scaffolds a new Laravel 13 / Inertia v3 / React 19 / Fortify / Wayfinder project from the `davydeh/pandora` starter kit. Handles the installer prompts or runs the manual steps if non-interactive. | "/pandora", "new laravel project", "create a new app" |
 | [`remember`](./remember/SKILL.md) | Persists notes to scoped memory files (`~/.claude/memory/` for global, `<project>/.claude/memory/` for project-specific) instead of bloating CLAUDE.md. Asks for scope when ambiguous. | "/remember", "remember this", "save this for later", "don't forget" |
+| [`writing-voice`](./writing-voice/SKILL.md) | Applies the user's writing voice to prose drafted on their behalf — Slack, PR/MR descriptions, Jira, emails, retros, announcements, sign-offs. Includes a Quick Reference card and a full Baseline profile (`reference.md`) with annotated samples. | "/voice", "/writing-voice", "draft a message", "write a Slack", "write a PR", "rewrite this", "in my voice", "make this sound like me" |
 
 ## Adding a new skill
 
