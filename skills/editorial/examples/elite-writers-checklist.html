@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Elite Writer's Checklist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:        #FAF9F5;
+    --paper-edge:   #F0EEE6;
+    --ink:          #1F1F1E;
+    --ink-soft:     #3D3D3A;
+    --ink-mute:     #8A867D;
+    --rule:         #E5E1D3;
+    --coral:        #4F6B3B;
+    --coral-soft:   #E1E6D6;
+  }
+
+  @page {
+    size: Letter;
+    margin: 0.7in 0.85in 0.7in 0.85in;
+    background: var(--paper);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Inter", -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ---------- cover block ---------- */
+  .cover {
+    padding-top: 0.05in;
+    padding-bottom: 0.25in;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 0.35in;
+    break-after: avoid;
+  }
+
+  .eyebrow {
+    font-family: "Inter", sans-serif;
+    font-size: 8.5pt;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin: 0 0 14px 0;
+  }
+
+  h1.title {
+    font-family: "Fraunces", Georgia, serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 44pt;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin: 0 0 18px 0;
+    font-variation-settings: "SOFT" 50, "WONK" 0;
+  }
+
+  h1.title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--coral);
+  }
+
+  .lede {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 400;
+    font-size: 13pt;
+    line-height: 1.45;
+    color: var(--ink-soft);
+    max-width: 5.6in;
+    margin: 0;
+    font-variation-settings: "SOFT" 100;
+  }
+
+  .meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 22px;
+    font-size: 8.5pt;
+    color: var(--ink-mute);
+    letter-spacing: 0.04em;
+  }
+
+  .meta-row .left {
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+  }
+
+  .meta-row .right {
+    font-family: "Fraunces", Georgia, serif;
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- how to use ---------- */
+  aside.howto {
+    margin: 0 0 0.4in 0;
+    padding: 16px 20px 18px 20px;
+    background: var(--coral-soft);
+    border-radius: 6px;
+    break-inside: avoid;
+  }
+
+  .contents {
+    break-after: page;
+  }
+
+  /* ---------- pull quote ---------- */
+  figure.pullquote {
+    margin: 0 0 0.45in 0;
+    padding: 0 0 0 18px;
+    border-left: 2px solid var(--coral);
+    break-inside: avoid;
+  }
+
+  figure.pullquote blockquote {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18pt;
+    line-height: 1.25;
+    color: var(--ink);
+    margin: 0;
+    letter-spacing: -0.005em;
+    font-variation-settings: "SOFT" 100;
+  }
+
+  figure.pullquote blockquote em {
+    font-style: italic;
+    color: var(--coral);
+  }
+
+  figure.pullquote figcaption {
+    margin-top: 10px;
+    font-family: "Inter", sans-serif;
+    font-size: 8.5pt;
+    letter-spacing: 0.04em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+  }
+
+  /* ---------- contents ---------- */
+  .contents {
+    margin: 0;
+    padding: 0;
+    break-inside: avoid;
+  }
+
+  .contents-eyebrow {
+    font-family: "Inter", sans-serif;
+    font-size: 7.5pt;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin: 0 0 10px 0;
+  }
+
+  ol.contents-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  ol.contents-list li {
+    display: grid;
+    grid-template-columns: 36px 1fr auto auto;
+    align-items: baseline;
+    column-gap: 12px;
+    padding: 9px 0;
+    border-top: 1px solid var(--rule);
+    font-family: "Fraunces", Georgia, serif;
+  }
+
+  ol.contents-list li:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  ol.contents-list li .num {
+    font-style: italic;
+    color: var(--coral);
+    font-weight: 500;
+    font-size: 12pt;
+  }
+
+  ol.contents-list li .lbl {
+    font-size: 12pt;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  ol.contents-list li .dots {
+    border-bottom: 1px dotted var(--ink-mute);
+    height: 0;
+    align-self: end;
+    margin-bottom: 4px;
+  }
+
+  ol.contents-list li .count {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-size: 9pt;
+    color: var(--ink-mute);
+    letter-spacing: 0.02em;
+  }
+
+  aside.howto .howto-eyebrow {
+    font-family: "Inter", sans-serif;
+    font-size: 7.5pt;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin: 0 0 10px 0;
+  }
+
+  aside.howto ol.howto-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: howto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 22px;
+  }
+
+  aside.howto ol.howto-list li {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    column-gap: 8px;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 10.5pt;
+    line-height: 1.4;
+    color: var(--ink-soft);
+    font-variation-settings: "SOFT" 100;
+  }
+
+  aside.howto ol.howto-list li .num {
+    font-style: italic;
+    color: var(--coral);
+    font-weight: 500;
+  }
+
+  /* ---------- section ---------- */
+  section.chunk {
+    break-inside: avoid;
+    margin: 0 0 28px 0;
+    padding: 0;
+  }
+
+  .section-head {
+    display: grid;
+    grid-template-columns: 0.55in 1fr;
+    column-gap: 18px;
+    align-items: baseline;
+    margin: 0 0 14px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .section-num {
+    font-family: "Fraunces", Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22pt;
+    color: var(--coral);
+    line-height: 1;
+  }
+
+  .section-title-block h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    font-size: 18pt;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 0 0 4px 0;
+    color: var(--ink);
+  }
+
+  .section-title-block .section-sub {
+    font-family: "Inter", sans-serif;
+    font-size: 9pt;
+    color: var(--ink-mute);
+    letter-spacing: 0.02em;
+    margin: 0;
+  }
+
+  /* ---------- checklist ---------- */
+  ul.checks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul.checks li {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    column-gap: 12px;
+    align-items: flex-start;
+    padding: 7px 0 7px 0;
+    border-bottom: 1px dashed var(--rule);
+    break-inside: avoid;
+  }
+
+  ul.checks li:last-child {
+    border-bottom: none;
+  }
+
+  ul.checks li .box {
+    width: 12px;
+    height: 12px;
+    border: 1.2px solid var(--ink);
+    border-radius: 2.5px;
+    margin-top: 3.5px;
+    background: var(--paper);
+    flex-shrink: 0;
+  }
+
+  ul.checks li .q {
+    font-size: 10.5pt;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+
+  ul.checks li .q .accent {
+    color: var(--coral);
+    font-style: italic;
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 400;
+  }
+
+  /* ---------- footer ---------- */
+  .colophon {
+    margin-top: 28px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    font-size: 8.5pt;
+    color: var(--ink-mute);
+    letter-spacing: 0.04em;
+  }
+
+  .colophon .right {
+    font-family: "Fraunces", Georgia, serif;
+    font-style: italic;
+  }
+
+  .signature {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .signature .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--coral);
+    display: inline-block;
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- ============ COVER ============ -->
+  <header class="cover">
+    <p class="eyebrow">A Checklist for Better Prose</p>
+    <h1 class="title">The Elite<br/>Writer&rsquo;s <em>Checklist.</em></h1>
+    <p class="lede">
+      Run through these forty-four questions after you write. Each one is a small invitation to make a sentence sharper, a thought clearer, a piece of writing more its own.
+    </p>
+    <div class="meta-row">
+      <span class="left">Forty-four checks &middot; Five movements</span>
+      <span class="right">For your next draft</span>
+    </div>
+  </header>
+
+  <aside class="howto">
+    <p class="howto-eyebrow">How to use it</p>
+    <ol class="howto-list">
+      <li><span class="num">i.</span><span>Finish a draft. Walk away long enough that the words stop sounding like yours.</span></li>
+      <li><span class="num">ii.</span><span>Read through each question in order. Tick only when you can honestly answer well.</span></li>
+      <li><span class="num">iii.</span><span>Treat an unticked box as a small invitation to revisit a sentence, not a verdict.</span></li>
+    </ol>
+  </aside>
+
+  <figure class="pullquote">
+    <blockquote>
+      &ldquo;Easy reading <em>is</em> damn hard writing.&rdquo;
+    </blockquote>
+    <figcaption>&mdash; Nathaniel Hawthorne</figcaption>
+  </figure>
+
+  <div class="contents">
+    <p class="contents-eyebrow">Inside</p>
+    <ol class="contents-list">
+      <li><span class="num">01</span><span class="lbl">Intent &amp; audience</span><span class="dots"></span><span class="count">4&nbsp;checks</span></li>
+      <li><span class="num">02</span><span class="lbl">Concision</span><span class="dots"></span><span class="count">10&nbsp;checks</span></li>
+      <li><span class="num">03</span><span class="lbl">Clarity</span><span class="dots"></span><span class="count">15&nbsp;checks</span></li>
+      <li><span class="num">04</span><span class="lbl">Flow &amp; structure</span><span class="dots"></span><span class="count">9&nbsp;checks</span></li>
+      <li><span class="num">05</span><span class="lbl">Voice &amp; style</span><span class="dots"></span><span class="count">6&nbsp;checks</span></li>
+    </ol>
+  </div>
+
+  <!-- ============ 01 INTENT ============ -->
+  <section class="chunk">
+    <div class="section-head">
+      <div class="section-num">01</div>
+      <div class="section-title-block">
+        <h2>Intent &amp; audience</h2>
+        <p class="section-sub">Before language, settle the why and the who.</p>
+      </div>
+    </div>
+    <ul class="checks">
+      <li><span class="box"></span><span class="q">Have I avoided <span class="accent">pretentiousness</span> throughout the writing?</span></li>
+      <li><span class="box"></span><span class="q">Have I been sensitive to my readers&rsquo; views, assumptions, and familiarity with the subject?</span></li>
+      <li><span class="box"></span><span class="q">Have I written with full awareness of my <span class="accent">primary intent</span>?</span></li>
+      <li><span class="box"></span><span class="q">Have I aspired to make this piece of writing <span class="accent">beautiful</span>?</span></li>
+    </ul>
+  </section>
+
+  <!-- ============ 02 CONCISION ============ -->
+  <section class="chunk">
+    <div class="section-head">
+      <div class="section-num">02</div>
+      <div class="section-title-block">
+        <h2>Concision</h2>
+        <p class="section-sub">Cut what doesn&rsquo;t earn its place on the page.</p>
+      </div>
+    </div>
+    <ul class="checks">
+      <li><span class="box"></span><span class="q">Have I avoided pointlessly fancy, flowery, and formal language?</span></li>
+      <li><span class="box"></span><span class="q">Do I avoid using redundant or implied words?</span></li>
+      <li><span class="box"></span><span class="q">Have I used any needlessly long words?</span></li>
+      <li><span class="box"></span><span class="q">Do I unnecessarily repeat any ideas or points?</span></li>
+      <li><span class="box"></span><span class="q">Have I made any simple points sound needlessly complicated?</span></li>
+      <li><span class="box"></span><span class="q">Have I gone into too much detail, or given too many examples or explanations?</span></li>
+      <li><span class="box"></span><span class="q">Do I use any double negatives without good reason?</span></li>
+      <li><span class="box"></span><span class="q">Have I described any entities in a longwinded way?</span></li>
+      <li><span class="box"></span><span class="q">Do any sentences carry thoughts that are too long, or any weighed down with subclauses?</span></li>
+      <li><span class="box"></span><span class="q">Have I avoided pointless ceremony &mdash; capitalising words or putting quote marks around them unnecessarily?</span></li>
+    </ul>
+  </section>
+
+  <!-- ============ 03 CLARITY ============ -->
+  <section class="chunk">
+    <div class="section-head">
+      <div class="section-num">03</div>
+      <div class="section-title-block">
+        <h2>Clarity</h2>
+        <p class="section-sub">Make every sentence unmistakable on first reading.</p>
+      </div>
+    </div>
+    <ul class="checks">
+      <li><span class="box"></span><span class="q">Are any points in the writing <span class="accent">fuzzy</span>?</span></li>
+      <li><span class="box"></span><span class="q">Does my writing reflect clear, logical thinking from beginning to end?</span></li>
+      <li><span class="box"></span><span class="q">Will a reader&rsquo;s mind go blank anywhere, or might someone be forced to reread?</span></li>
+      <li><span class="box"></span><span class="q">Are all my sentences tightly focused?</span></li>
+      <li><span class="box"></span><span class="q">Are all modifiers (words that alter others) properly placed?</span></li>
+      <li><span class="box"></span><span class="q">Is there any ambiguity, anywhere at all, in the writing?</span></li>
+      <li><span class="box"></span><span class="q">Are all comparisons crisp, all contrasts sharp, and all distinctions between words meaningful?</span></li>
+      <li><span class="box"></span><span class="q">Do I have any unnecessarily &ldquo;curly&rdquo; sentences in the writing?</span></li>
+      <li><span class="box"></span><span class="q">Do I avoid soul-killing <span class="accent">jargon</span> or buzzwords?</span></li>
+      <li><span class="box"></span><span class="q">Are my tenses consistent enough throughout?</span></li>
+      <li><span class="box"></span><span class="q">Do I refer to entities as &ldquo;it&rdquo; and &ldquo;they&rdquo; in an appropriate and consistent way?</span></li>
+      <li><span class="box"></span><span class="q">Have I been clear about what any references to &ldquo;this,&rdquo; &ldquo;that,&rdquo; &ldquo;they,&rdquo; and &ldquo;those&rdquo; relate to?</span></li>
+      <li><span class="box"></span><span class="q">Have I used the word &ldquo;that&rdquo; too often anywhere?</span></li>
+      <li><span class="box"></span><span class="q">Does <span class="accent">clutter</span> obscure any of the key ideas in a sentence?</span></li>
+      <li><span class="box"></span><span class="q">Do I stick to my &ldquo;house style&rdquo; throughout?</span></li>
+    </ul>
+  </section>
+
+  <!-- ============ 04 FLOW ============ -->
+  <section class="chunk">
+    <div class="section-head">
+      <div class="section-num">04</div>
+      <div class="section-title-block">
+        <h2>Flow &amp; structure</h2>
+        <p class="section-sub">Build music into how the piece moves.</p>
+      </div>
+    </div>
+    <ul class="checks">
+      <li><span class="box"></span><span class="q">Do I have a well-defined and elegant narrative structure?</span></li>
+      <li><span class="box"></span><span class="q">Are all the points tied neatly into their narrative sections?</span></li>
+      <li><span class="box"></span><span class="q">Are all my paragraphs ordered elegantly?</span></li>
+      <li><span class="box"></span><span class="q">Do any sentences still sound clunky?</span></li>
+      <li><span class="box"></span><span class="q">Does the writing <span class="accent">flow like music</span> from start to finish?</span></li>
+      <li><span class="box"></span><span class="q">Do all my sentences transition elegantly?</span></li>
+      <li><span class="box"></span><span class="q">Do multiple ideas in a sentence sit together in a parallel way?</span></li>
+      <li><span class="box"></span><span class="q">Are there any ugly word echoes in the copy?</span></li>
+      <li><span class="box"></span><span class="q">Do my sentences, and words, sound too &ldquo;samey&rdquo; anywhere?</span></li>
+    </ul>
+  </section>
+
+  <!-- ============ 05 VOICE ============ -->
+  <section class="chunk">
+    <div class="section-head">
+      <div class="section-num">05</div>
+      <div class="section-title-block">
+        <h2>Voice &amp; style</h2>
+        <p class="section-sub">Make it sing in a way nobody else could.</p>
+      </div>
+    </div>
+    <ul class="checks">
+      <li><span class="box"></span><span class="q">Are there any cliches or stale expressions in my copy?</span></li>
+      <li><span class="box"></span><span class="q">Do I use any weak, filler, or hedging words that don&rsquo;t add anything?</span></li>
+      <li><span class="box"></span><span class="q">Do my sentences create enough pictures, feelings, or emotions in the reader?</span></li>
+      <li><span class="box"></span><span class="q">Do I reverse into sentences too often?</span></li>
+      <li><span class="box"></span><span class="q">Do I stick mostly to the <span class="accent">active voice</span>?</span></li>
+      <li><span class="box"></span><span class="q">Does the writing have enough <span class="accent">charisma</span>?</span></li>
+    </ul>
+  </section>
+
+  <footer class="colophon">
+    <span class="signature"><span class="dot"></span><span>Elite Writer&rsquo;s Checklist</span></span>
+    <span class="right">Read once. Edit twice. Then read it aloud.</span>
+  </footer>
+
+</body>
+</html>

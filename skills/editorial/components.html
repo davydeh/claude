@@ -1,0 +1,126 @@
+<!--
+  editorial — component snippet library
+
+  Copy/paste these blocks into any HTML doc that links style.css. Each
+  block is the minimum markup for one component. Combine freely; the
+  system is composable, not a fixed page shape.
+-->
+
+<!-- ====================================================================
+     PALETTE — set on <html> or <body>:
+       class="palette-coral"   (default — Claude warm)
+       class="palette-forest"
+       class="palette-indigo"
+       class="palette-plum"
+       class="palette-slateteal"
+     Or override --accent / --accent-soft on :root in a <style> block.
+==================================================================== -->
+
+
+<!-- ====================================================================
+     COVER  —  page-opening title block
+     The italic <em> word is the accent moment. Lede is optional.
+     meta-row is optional; use for credits/date/audience.
+==================================================================== -->
+<header class="cover">
+  <p class="eyebrow">A brief category line</p>
+  <h1 class="title">A two-line title with <em>an accent.</em></h1>
+  <p class="lede">A single sentence that orients the reader and earns its place above the fold.</p>
+  <div class="meta-row">
+    <span class="left">Author &middot; Audience</span>
+    <span class="right">A short tagline</span>
+  </div>
+</header>
+
+
+<!-- ====================================================================
+     ASIDE CARD  —  soft-tinted note (how-to-use, prerequisites, warning)
+     Three-column grid by default. Drop column count by changing
+     grid-template-columns inline if you have fewer items.
+==================================================================== -->
+<aside class="card">
+  <p class="card-eyebrow">How to use it</p>
+  <ol class="card-list">
+    <li><span class="num">i.</span><span>First step, written conversationally.</span></li>
+    <li><span class="num">ii.</span><span>Second step.</span></li>
+    <li><span class="num">iii.</span><span>Third step.</span></li>
+  </ol>
+</aside>
+
+
+<!-- ====================================================================
+     PULL-QUOTE  —  break up long passages with a quote in serif
+     The italic <em> emphasizes the load-bearing word.
+==================================================================== -->
+<figure class="pullquote">
+  <blockquote>&ldquo;The quote text, with one word emphasised <em>like so</em>.&rdquo;</blockquote>
+  <figcaption>&mdash; Source or speaker</figcaption>
+</figure>
+
+
+<!-- ====================================================================
+     CONTENTS  —  table of contents with dotted leader and item count
+     Add .page-break to force a page break after.
+==================================================================== -->
+<div class="contents page-break">
+  <p class="contents-eyebrow">Inside</p>
+  <ol class="contents-list">
+    <li><span class="num">01</span><span class="lbl">First chapter</span><span class="dots"></span><span class="count">4&nbsp;items</span></li>
+    <li><span class="num">02</span><span class="lbl">Second chapter</span><span class="dots"></span><span class="count">10&nbsp;items</span></li>
+    <li><span class="num">03</span><span class="lbl">Third chapter</span><span class="dots"></span><span class="count">6&nbsp;items</span></li>
+  </ol>
+</div>
+
+
+<!-- ====================================================================
+     SECTION HEAD  —  italic accent numeral + serif title + optional sub
+     Always pair the title with the italic numeral — signature element.
+==================================================================== -->
+<section class="chunk">
+  <div class="section-head">
+    <div class="section-num">01</div>
+    <div class="section-title-block">
+      <h2>Section title</h2>
+      <p class="section-sub">Optional one-line subtitle.</p>
+    </div>
+  </div>
+
+  <!-- section body goes here: checklist, prose, or both -->
+</section>
+
+
+<!-- ====================================================================
+     CHECKLIST  —  goes inside a section.chunk
+     Use <span class="accent">word</span> for italic accent on key terms.
+==================================================================== -->
+<ul class="checks">
+  <li><span class="box"></span><span class="q">Have I done the <span class="accent">important</span> thing?</span></li>
+  <li><span class="box"></span><span class="q">Did I avoid the other thing?</span></li>
+  <li><span class="box"></span><span class="q">Is this point sharp enough to act on?</span></li>
+</ul>
+
+
+<!-- ====================================================================
+     BODY PROSE  —  paragraphs and subheads inside a section.chunk
+==================================================================== -->
+<p class="body">A paragraph of body text. Line length is capped to ~5.8in so it stays readable.
+Use <span class="accent">italic accents</span> for key terms; avoid bold.</p>
+
+<h3 class="subhead">A subhead in serif</h3>
+
+<p class="body">Another paragraph after the subhead. Subheads sit close to their paragraph.</p>
+
+
+<!-- ====================================================================
+     COLOPHON  —  closing footer with accent dot + tagline
+==================================================================== -->
+<footer class="colophon">
+  <span class="signature"><span class="dot"></span><span>Document name</span></span>
+  <span class="right">A short closing line</span>
+</footer>
+
+
+<!-- ====================================================================
+     PAGE-BREAK UTILITY  —  add .page-break to any block to break after
+==================================================================== -->
+<div class="page-break"></div>

@@ -1,0 +1,245 @@
+/* =====================================================================
+   editorial — stylesheet
+   ---------------------------------------------------------------------
+   Drop into any HTML doc:
+     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="path/to/style.css">
+
+   Then compose components freely (see components.html for snippets).
+   Swap --accent + --accent-soft to change palette.
+   ===================================================================== */
+
+:root {
+  --paper:        #FAF9F5;
+  --paper-edge:   #F0EEE6;
+  --ink:          #1F1F1E;
+  --ink-soft:     #3D3D3A;
+  --ink-mute:     #8A867D;
+  --rule:         #E5E1D3;
+  --accent:       #D97757;  /* Coral / Claude default */
+  --accent-soft:  #F4E3D8;
+}
+
+/* Palette classes — apply to <html> or <body> to switch */
+.palette-coral      { --accent: #D97757; --accent-soft: #F4E3D8; }
+.palette-forest     { --accent: #4F6B3B; --accent-soft: #E1E6D6; }
+.palette-indigo     { --accent: #3D5A80; --accent-soft: #DCE3EE; }
+.palette-plum       { --accent: #6B3858; --accent-soft: #ECDDE5; }
+.palette-slateteal  { --accent: #2F5D62; --accent-soft: #D3E0E0; }
+
+@page {
+  size: Letter;
+  margin: 0.7in 0.85in 0.7in 0.85in;
+  background: var(--paper);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Inter", -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- inline accent (italic Fraunces in accent color) ---------- */
+.accent {
+  color: var(--accent);
+  font-style: italic;
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 400;
+}
+
+/* ---------- COMPONENT: cover ---------- */
+.cover {
+  padding-top: 0.05in;
+  padding-bottom: 0.25in;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 0.35in;
+  break-after: avoid;
+}
+.eyebrow {
+  font-family: "Inter", sans-serif;
+  font-size: 8.5pt; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 14px 0;
+}
+h1.title {
+  font-family: "Fraunces", Georgia, serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 44pt; line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 18px 0;
+  font-variation-settings: "SOFT" 50, "WONK" 0;
+}
+h1.title em {
+  font-style: italic; font-weight: 400;
+  color: var(--accent);
+}
+.lede {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 13pt; line-height: 1.45;
+  color: var(--ink-soft);
+  max-width: 5.6in; margin: 0;
+  font-variation-settings: "SOFT" 100;
+}
+.meta-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-top: 22px;
+  font-size: 8.5pt; color: var(--ink-mute);
+  letter-spacing: 0.04em;
+}
+.meta-row .left  { text-transform: uppercase; font-weight: 500; letter-spacing: 0.14em; }
+.meta-row .right { font-family: "Fraunces", Georgia, serif; font-style: italic; color: var(--ink-soft); }
+
+/* ---------- COMPONENT: aside card (how-to-use, callouts) ---------- */
+aside.card {
+  margin: 0 0 0.4in 0;
+  padding: 16px 20px 18px 20px;
+  background: var(--accent-soft);
+  border-radius: 6px;
+  break-inside: avoid;
+}
+aside.card .card-eyebrow {
+  font-family: "Inter", sans-serif;
+  font-size: 7.5pt; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 10px 0;
+}
+aside.card ol.card-list {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: 1fr 1fr 1fr; column-gap: 22px;
+}
+aside.card ol.card-list li {
+  display: grid; grid-template-columns: 20px 1fr; column-gap: 8px;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 10.5pt; line-height: 1.4;
+  color: var(--ink-soft);
+  font-variation-settings: "SOFT" 100;
+}
+aside.card ol.card-list li .num {
+  font-style: italic; color: var(--accent); font-weight: 500;
+}
+
+/* ---------- COMPONENT: pull-quote ---------- */
+figure.pullquote {
+  margin: 0 0 0.45in 0;
+  padding: 0 0 0 18px;
+  border-left: 2px solid var(--accent);
+  break-inside: avoid;
+}
+figure.pullquote blockquote {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 18pt; line-height: 1.25;
+  color: var(--ink); margin: 0;
+  letter-spacing: -0.005em;
+  font-variation-settings: "SOFT" 100;
+}
+figure.pullquote blockquote em { font-style: italic; color: var(--accent); }
+figure.pullquote figcaption {
+  margin-top: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 8.5pt; letter-spacing: 0.04em;
+  color: var(--ink-mute); text-transform: uppercase;
+}
+
+/* ---------- COMPONENT: contents (table of contents) ---------- */
+.contents { break-inside: avoid; }
+.contents-eyebrow {
+  font-family: "Inter", sans-serif;
+  font-size: 7.5pt; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-mute);
+  margin: 0 0 10px 0;
+}
+ol.contents-list { list-style: none; margin: 0; padding: 0; }
+ol.contents-list li {
+  display: grid; grid-template-columns: 36px 1fr auto auto;
+  align-items: baseline; column-gap: 12px;
+  padding: 9px 0;
+  border-top: 1px solid var(--rule);
+  font-family: "Fraunces", Georgia, serif;
+}
+ol.contents-list li:last-child { border-bottom: 1px solid var(--rule); }
+ol.contents-list li .num   { font-style: italic; color: var(--accent); font-weight: 500; font-size: 12pt; }
+ol.contents-list li .lbl   { font-size: 12pt; font-weight: 500; color: var(--ink); }
+ol.contents-list li .dots  { border-bottom: 1px dotted var(--ink-mute); height: 0; align-self: end; margin-bottom: 4px; }
+ol.contents-list li .count {
+  font-family: "Inter", sans-serif; font-style: normal;
+  font-size: 9pt; color: var(--ink-mute); letter-spacing: 0.02em;
+}
+
+/* utility: page-break-after */
+.page-break { break-after: page; }
+
+/* ---------- COMPONENT: section ---------- */
+section.chunk { break-inside: avoid; margin: 0 0 28px 0; }
+.section-head {
+  display: grid; grid-template-columns: 0.55in 1fr;
+  column-gap: 18px; align-items: baseline;
+  margin: 0 0 14px 0; padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule);
+}
+.section-num {
+  font-family: "Fraunces", Georgia, serif;
+  font-style: italic; font-weight: 400;
+  font-size: 22pt; color: var(--accent); line-height: 1;
+}
+.section-title-block h2 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 500; font-size: 18pt; line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin: 0 0 4px 0; color: var(--ink);
+}
+.section-title-block .section-sub {
+  font-family: "Inter", sans-serif;
+  font-size: 9pt; color: var(--ink-mute);
+  letter-spacing: 0.02em; margin: 0;
+}
+
+/* ---------- COMPONENT: checklist ---------- */
+ul.checks { list-style: none; margin: 0; padding: 0; }
+ul.checks li {
+  display: grid; grid-template-columns: 22px 1fr;
+  column-gap: 12px; align-items: flex-start;
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--rule);
+  break-inside: avoid;
+}
+ul.checks li:last-child { border-bottom: none; }
+ul.checks li .box {
+  width: 12px; height: 12px;
+  border: 1.2px solid var(--ink); border-radius: 2.5px;
+  margin-top: 3.5px; background: var(--paper);
+  flex-shrink: 0;
+}
+ul.checks li .q { font-size: 10.5pt; line-height: 1.4; color: var(--ink); }
+
+/* ---------- COMPONENT: body prose ---------- */
+p.body { margin: 0 0 14px 0; max-width: 5.8in; }
+p.body + p.body { margin-top: 0; }
+h3.subhead {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 500; font-size: 13pt;
+  margin: 18px 0 6px 0; color: var(--ink);
+}
+
+/* ---------- COMPONENT: colophon footer ---------- */
+.colophon {
+  margin-top: 28px; padding-top: 14px;
+  border-top: 1px solid var(--rule);
+  display: flex; justify-content: space-between;
+  font-size: 8.5pt; color: var(--ink-mute);
+  letter-spacing: 0.04em;
+}
+.colophon .right { font-family: "Fraunces", Georgia, serif; font-style: italic; }
+.signature { display: inline-flex; align-items: center; gap: 8px; }
+.signature .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: inline-block; }
