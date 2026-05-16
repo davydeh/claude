@@ -24,8 +24,16 @@ link() {
     echo "  relink $dst (was -> $current)"
     rm "$dst"
   elif [ -e "$dst" ]; then
-    echo "  backup $dst -> $dst.backup-$STAMP"
-    mv "$dst" "$dst.backup-$STAMP"
+    # If the existing target is byte-identical to the repo source, it's a
+    # leftover duplicate from a prior install (or a fresh clone over the same
+    # content). Drop it without a backup — the canonical copy lives in git.
+    if diff -rq "$src" "$dst" >/dev/null 2>&1; then
+      echo "  same  $dst (identical to repo, removing)"
+      rm -rf "$dst"
+    else
+      echo "  backup $dst -> $dst.backup-$STAMP"
+      mv "$dst" "$dst.backup-$STAMP"
+    fi
   fi
   ln -s "$src" "$dst"
   echo "  link  $dst -> $src"
