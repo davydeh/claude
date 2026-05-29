@@ -19,7 +19,7 @@ The script symlinks each file into `~/.claude/`. Existing files are backed up wi
 - `statusline.sh` — Shows model name and total cost, right-aligned.
 - `memory/general.md` — General persistent notes.
 - `agents/chrome-devtools-frontend-tester.md` — Frontend tester driving Chrome via the chrome-devtools MCP.
-- `skills/` — `content-review`, `learn-from-mistakes`, `pandora`, `remember`.
+- `skills/` — `bootstrap` (scaffold a new Atlas + Pandora app end-to-end), `content-review`, `editorial`, `learn-from-mistakes`, `pandora`, `remember`, `writing-voice`.
 
 ## What's intentionally not here
 
