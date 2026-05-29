@@ -60,7 +60,7 @@ bun install
 cp .env.example .env
 php artisan key:generate
 touch database/database.sqlite
-php artisan migrate --force
+php artisan migrate --force --seed   # --seed runs DevAdminSeeder (local only): admin davydeh@gmail.com / testpass
 bun run build
 git add -A && git commit -q -m "Initial commit from Pandora starter kit"
 ```
@@ -131,8 +131,9 @@ output: a reachability failure is DNS/Herd (`herd link`, is the site served?); a
 failure is the API/DB; an authed-read failure is token/Sanctum config. Fix before proceeding —
 do not deploy a backend whose round-trip is unproven.
 
-**Stop here.** Report: "Local stack verified against `http://<slug>-api.test`. Start
-building. When you're ready to ship, run `/bootstrap deploy`."
+**Stop here.** Report: "Local stack verified against `http://<slug>-api.test`. Log in with the
+seeded dev admin — `davydeh@gmail.com` / `testpass`. Start building. When you're ready to ship,
+run `/bootstrap deploy`."
 
 ---
 
